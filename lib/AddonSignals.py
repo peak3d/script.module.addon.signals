@@ -21,7 +21,7 @@ def _decodeData(data):
 
 
 def _encodeData(data):
-    return '\\"[\\"{0}\\"]\\"'.format(binascii.hexlify(json.dumps(data)))
+    return '\\"[\\"{0}\\"]\\"'.format(binascii.hexlify(json.dumps(data).encode('utf-8')).decode('utf-8'))
 
 
 class SignalReceiver(xbmc.Monitor):
